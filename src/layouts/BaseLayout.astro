@@ -1,0 +1,96 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalPath = Astro.url.pathname,
+  noindex = false,
+} = Astro.props;
+
+const origin = Astro.site?.origin ?? "https://www.mp-schaltanlagen.de";
+const canonical = new URL(canonicalPath, origin).toString();
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MP Schaltschrankbau",
+  "legalName": "Mark Prohorov",
+  "url": origin,
+  "email": "kontakt@mp-schaltanlagen.de",
+  "telephone": "+49 621 37703627",
+  "description": "Schaltschrankbau, Fertigung nach Kundenunterlagen und Serienfertigung in Mannheim",
+};
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b2a31" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Zum Inhalt springen</a>
+    <div class="topbar"><div class="container topbar-inner"><span><span class="status-dot"></span> INDUSTRIELLE ELEKTROTECHNIK AUS MANNHEIM</span><span>FERTIGUNG NACH KUNDENUNTERLAGEN</span></div></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand" aria-label="MP Schaltschrankbau Startseite">
+          <span class="brand-mark">MP<span class="brand-dot"></span></span>
+          <span class="brand-name">SCHALTSCHRANKBAU<small>MARK PROHOROV · MANNHEIM</small></span>
+        </a>
+        <nav class="desktop-nav" aria-label="Hauptnavigation">
+          <a href="/#leistungen">Leistungen</a>
+          <a href="/schaltschrankbau-lohnfertigung/">Lohnfertigung</a>
+          <a href="/#ablauf">So arbeiten wir</a>
+          <a class="nav-cta" href="/#anfrage">Projekt anfragen <span aria-hidden="true">↗</span></a>
+        </nav>
+        <details class="mobile-nav">
+          <summary aria-label="Menü öffnen">Menü <span aria-hidden="true">☰</span></summary>
+          <nav aria-label="Mobile Navigation">
+            <a href="/#leistungen">Leistungen</a>
+            <a href="/schaltschrankbau-lohnfertigung/">Lohnfertigung</a>
+            <a href="/#ablauf">Ablauf</a>
+            <a href="/#anfrage">Projekt anfragen</a>
+          </nav>
+        </details>
+      </div>
+    </header>
+    <main id="content"><slot /></main>
+    <footer class="site-footer">
+      <div class="container footer-top">
+        <div>
+          <a class="footer-brand" href="/">MP <span>SCHALTSCHRANKBAU</span></a>
+          <p>Schaltschrankbau, Lohnfertigung und Serienfertigung für Industrie und Maschinenbau.</p>
+          <p>Geschäftsbezeichnung: MP Schaltschrankbau · Inhaber: Mark Prohorov</p>
+        </div>
+        <div class="footer-contact">
+          <strong>Kontakt</strong>
+          <a href="mailto:vertrieb@mp-schaltanlagen.de">vertrieb@mp-schaltanlagen.de</a>
+          <a href="tel:+4962137703627">+49 621 37703627</a>
+          <span>Mannheim, Deutschland</span>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© {new Date().getFullYear()} MP Schaltschrankbau</span>
+        <div><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></div>
+      </div>
+    </footer>
+  </body>
+</html>
