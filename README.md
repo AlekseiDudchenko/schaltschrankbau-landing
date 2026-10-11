@@ -22,14 +22,52 @@ npm run build
 
 Node.js >= 22.12 verwenden.
 
-## Cloudflare Pages
+## Cloudflare Pages: nur Preview bis zur Launch-Freigabe
 
-- GitHub-Repository: `AlekseiDudchenko/schaltschrankbau-landing`
-- Produktionsbranch: `main`
-- Build-Befehl: `npm run build`
-- Output-Verzeichnis: `dist`
+`main` enthält derzeit nur README.md (Commit `09edc5e`), nicht die Astro-App.
+Ein Build von `main` mit `npm run build` scheitert deshalb mit ENOENT für
+`/opt/buildhome/repo/package.json`. Die App liegt in Draft-PR #1 auf
+`feat/astro-seo-landing-v1`. Weder den PR mergen noch diese Feature-Branch
+zur Production branch machen, um den Fehler zu umgehen.
 
-Cloudflare-Projekt und Domain erst nach Freigabe verbinden.
+Im bestehenden Pages-Projekt unter **Settings > Build > Branch control > Edit**:
+
+| Einstellung | Wert |
+| --- | --- |
+| Production branch | `main` |
+| Enable automatic production branch deployments | **Aus** |
+| Preview branch | **Custom branches** |
+| Include Preview branches | `feat/astro-seo-landing-v1` (ohne `*`) |
+| Exclude Preview branches | Leer |
+
+Speichern. Unter **Settings > Build > Build configuration**:
+
+| Einstellung | Wert |
+| --- | --- |
+| Framework preset | Astro (falls angezeigt) |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Root directory | Leer (Repository-Wurzel) |
+| Preview environment variable | `NODE_VERSION=22` |
+
+Die Git-Integration installiert die npm-Abhängigkeiten automatisch. Keine
+Wrangler-Konfiguration und keine Verschiebung in ein Unterverzeichnis nötig.
+Nach dem Speichern einen Commit auf `feat/astro-seo-landing-v1` pushen.
+Unter **Deployments** muss der neue Build **Preview**, die Feature-Branch und
+den neuen Commit anzeigen. Nicht den fehlgeschlagenen `main`-Build wiederholen:
+ein Retry baut weiterhin dessen alten Commit.
+
+Den Preview-Link des erfolgreichen Deployments verwenden. Preview ist standardmäßig
+öffentlich; Cloudflare setzt für Preview `X-Robots-Tag: noindex`. Das ist kein
+Zugriffsschutz. Bei Bedarf **Settings > General > Preview access > Restrict previews**
+mit Cloudflare Access konfigurieren. Keine Produktionsdomain verbinden.
+
+Production erst nach Abschluss der Launch-Checkliste, ausdrücklicher Freigabe
+und Merge nach `main` aktivieren. Draft-Status allein verhindert keine Deployments;
+der Schutz erfolgt durch die Branch-Einstellungen.
+
+Dokumentation: [Branch controls](https://developers.cloudflare.com/pages/configuration/branch-build-controls/),
+[Preview deployments](https://developers.cloudflare.com/pages/configuration/preview-deployments/).
 
 ## Anfrageformular
 
