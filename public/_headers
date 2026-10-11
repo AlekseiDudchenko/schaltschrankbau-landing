@@ -1,0 +1,4 @@
+# Temporary safeguard while the site is tested on pages.dev.
+# Remove before connecting the public production domain and going live.
+/*
+  X-Robots-Tag: noindex, nofollow
