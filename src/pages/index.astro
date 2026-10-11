@@ -1,0 +1,188 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const faqs = [
+  { q: "Fertigen Sie Schaltschränke nach vorhandenen Schaltplänen?", a: "Ja. Wir übernehmen Aufbau und Verdrahtung auf Grundlage Ihrer Stromlaufpläne, Stücklisten und technischen Vorgaben." },
+  { q: "Sind Einzelstücke und wiederkehrende Serien möglich?", a: "Wir fertigen projektbezogene Einzelstücke sowie wiederkehrende Serien. Bitte teilen Sie uns Stückzahl und geplanten Zeitraum mit." },
+  { q: "Übernehmen Sie auch die elektrotechnische Planung?", a: "Auf Wunsch unterstützen wir Sie bei der technischen Ausarbeitung und stimmen die erforderlichen Unterlagen vor der Fertigung mit Ihnen ab." },
+  { q: "Welche Unterlagen braucht MP für eine Anfrage?", a: "Hilfreich sind Stromlaufplan, Stückliste, gewünschte Stückzahl, technische Randbedingungen und ein Zieltermin. Auch mit einer ersten Projektbeschreibung können Sie anfragen." },
+];
+---
+<BaseLayout
+  title="Schaltschrankbau Mannheim | Lohn- & Serienfertigung – MP"
+  description="Schaltschrankbau in Mannheim: Fertigung nach Schaltplan, Einzel- und Serienfertigung sowie elektrotechnische Planung. Jetzt Projekt anfragen."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <p class="eyebrow light"><span class="eyebrow-line"></span> IHR FERTIGUNGSPARTNER IN MANNHEIM</p>
+        <h1>Schaltschrankbau in Mannheim. <em>Ihre Pläne. Unsere Fertigung.</em></h1>
+        <p class="hero-lead">Wir fertigen Steuer- und Verteilerschränke nach Ihren Stromlaufplänen und Stücklisten – vom Einzelstück bis zur wiederkehrenden Serie. Auf Wunsch übernehmen wir auch die technische Planung.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#anfrage">Angebot anfordern <span aria-hidden="true">↗</span></a>
+          <a class="button button-outline" href="#leistungen">Leistungen entdecken ↓</a>
+        </div>
+        <div class="hero-benefits">
+          <span>✓ Fertigung nach Schaltplan</span>
+          <span>✓ Einzelstück & Serie</span>
+          <span>✓ Planung auf Wunsch</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 520 610" role="img" aria-label="Schematische Darstellung eines geöffneten industriellen Schaltschranks mit Hutschienen und Leitungen">
+          <defs>
+            <linearGradient id="case" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8f1ec"/><stop offset="1" stop-color="#a0bcb8"/></linearGradient>
+            <linearGradient id="inside" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#193e43"/><stop offset="1" stop-color="#284d50"/></linearGradient>
+            <filter id="shadow"><feDropShadow dx="0" dy="20" stdDeviation="19" flood-opacity=".3"/></filter>
+          </defs>
+          <g filter="url(#shadow)">
+            <path d="M64 54H423V553H64z" fill="url(#case)" stroke="#91aca9" stroke-width="12"/>
+            <path d="M87 83H398V526H87z" fill="url(#inside)" stroke="#466469" stroke-width="4"/>
+            <path d="M427 57L492 36V553L427 554z" fill="#d7e3dc" stroke="#acc4bd" stroke-width="8"/>
+            <path d="M446 301h16" stroke="#698e85" stroke-width="5"/>
+            <g stroke="#769c96" stroke-width="4"><path d="M110 150H376M110 262H376M110 374H376M110 480H376"/></g>
+            <g fill="#d1ded5" stroke="#94aea7" stroke-width="2">
+              <rect x="116" y="105" width="61" height="61" rx="3"/><rect x="185" y="105" width="61" height="61" rx="3"/><rect x="255" y="105" width="110" height="61" rx="3"/>
+              <rect x="117" y="206" width="48" height="73" rx="2"/><rect x="173" y="206" width="48" height="73" rx="2"/><rect x="229" y="206" width="48" height="73" rx="2"/><rect x="285" y="206" width="78" height="73" rx="2"/>
+              <rect x="117" y="323" width="102" height="60" rx="2"/><rect x="228" y="323" width="135" height="60" rx="2"/>
+              <rect x="117" y="437" width="245" height="47" rx="2"/>
+            </g>
+            <g stroke="#236c75" stroke-width="3" fill="none"><path d="M139 168V194H310V206M206 166V205M307 166V206M143 278V318M196 278V323M252 278V323M317 279V323M161 383V430H290V437M294 383V437"/></g>
+            <g stroke="#d6b95e" stroke-width="3" fill="none"><path d="M343 166V189H354V205M334 280V310H347V323M183 383V404H127V435"/></g>
+            <g stroke="#7b9691" stroke-width="2"><path d="M130 122h32m-32 7h32m38-7h31m40 0h74m-214 101h27m28 0h26m30 0h25m26 0h45"/></g>
+            <g fill="#20494b"><circle cx="135" cy="358" r="10"/><circle cx="162" cy="358" r="10"/><circle cx="189" cy="358" r="10"/></g>
+          </g>
+          <g transform="translate(295 58)"><rect width="196" height="65" rx="5" fill="#fff"/><circle cx="31" cy="32" r="17" fill="#e5f5d5"/><path d="M24 32l5 5 10-11" fill="none" stroke="#237260" stroke-width="3"/><text x="59" y="29" font-size="14" font-weight="700" fill="#153f40">Fertigung nach Plan</text><text x="59" y="45" font-size="10" fill="#67827d">Für Industrie & Maschinenbau</text></g>
+        </svg>
+        <span class="illustration-note">SCHEMATISCHE DARSTELLUNG · ECHTE PROJEKTFOTOS FOLGEN</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-band" aria-label="Fakten zu unserer Fertigung">
+    <div class="container trust-grid">
+      <div><strong>Seit 2021</strong><span>Schaltschrankbau als Betrieb</span></div>
+      <div><strong>Bis 4.000 A</strong><span>Niederspannungshauptverteilungen</span></div>
+      <div><strong>Einzel & Serie</strong><span>Passend zu Ihrem Fertigungsbedarf</span></div>
+    </div>
+  </section>
+
+  <section class="section services" id="leistungen">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span class="eyebrow-line"></span> UNSERE LEISTUNGEN</p><h2>Sie planen. <br/><em>Wir fertigen.</em></h2></div>
+        <p>Wir unterstützen Unternehmen dort, wo eigene Fertigungskapazitäten fehlen oder elektrotechnische Expertise benötigt wird.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card"><div class="card-top"><span>01 / LOHNFERTIGUNG</span><span>↗</span></div><div class="service-symbol">▤</div><h3>Schaltschrankbau nach Schaltplan</h3><p>Sie liefern Stromlaufpläne, Stücklisten und Vorgaben. Wir übernehmen Aufbau und Verdrahtung.</p><a href="/schaltschrankbau-lohnfertigung/">Mehr zur Lohnfertigung <span>→</span></a></article>
+        <article class="service-card"><div class="card-top"><span>02 / SERIENFERTIGUNG</span><span>↗</span></div><div class="service-symbol">▥</div><h3>Serienfertigung</h3><p>Mehrere baugleiche oder wiederkehrende Schaltschränke für Maschinenbau, Anlagenbau und Industrie.</p><a href="#anfrage">Serie anfragen <span>→</span></a></article>
+        <article class="service-card"><div class="card-top"><span>03 / ELEKTROTECHNIK</span><span>↗</span></div><div class="service-symbol">⌁</div><h3>Planung & Umsetzung</h3><p>Noch keine vollständigen Unterlagen? Wir unterstützen bei der technischen Ausarbeitung und Fertigung.</p><a href="#anfrage">Projekt anfragen <span>→</span></a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-band">
+    <div class="container detail-grid">
+      <div>
+        <p class="eyebrow"><span class="eyebrow-line"></span> VERLÄNGERTE WERKBANK</p>
+        <h2>Ihre Konstruktion. <br/>Unsere <em>Kapazität.</em></h2>
+        <p>Sie kennen Ihr Produkt. Wir unterstützen mit dem Schaltschrankbau als Fertigungspartner – auf Basis klarer Unterlagen und abgestimmter Anforderungen.</p>
+        <ul class="checklist"><li>Aufbau und Verdrahtung nach Kundenunterlagen</li><li>Projektbezogene Einzel- und Serienfertigung</li><li>Technische Abstimmung bei offenen Fragen</li></ul>
+        <a class="text-link" href="/schaltschrankbau-lohnfertigung/">Lohnfertigung kennenlernen →</a>
+      </div>
+      <div class="blueprint-panel">
+        <p>FERTIGUNG NACH KUNDENUNTERLAGEN</p>
+        <svg viewBox="0 0 540 350" role="img" aria-label="Schematische technische Schaltschrankzeichnung">
+          <g stroke="#91cbbd" stroke-width="2" fill="none" opacity=".92">
+            <rect x="118" y="26" width="310" height="295"/><rect x="140" y="47" width="268" height="254" stroke-dasharray="5 6"/>
+            <path d="M160 95H390M160 150H390M160 209H390M160 265H390"/>
+            <rect x="172" y="72" width="58" height="52"/><rect x="242" y="72" width="58" height="52"/><rect x="313" y="72" width="60" height="52"/>
+            <rect x="173" y="177" width="80" height="65"/><rect x="270" y="177" width="105" height="65"/>
+            <path d="M200 125V150M269 125V150M344 125V150M212 243V265M324 243V265"/>
+            <circle cx="201" cy="200" r="12"/><circle cx="236" cy="200" r="7"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section industries" id="branchen">
+    <div class="container industries-grid">
+      <div><p class="eyebrow"><span class="eyebrow-line"></span> BRANCHEN</p><h2>Für Unternehmen mit <em>technischen Ansprüchen.</em></h2></div>
+      <div><p>Unser Fertigungsspektrum reicht von Steuer- und Schaltanlagen über MSR-Technik bis zu Niederspannungsverteilungen.</p><div class="industry-tags"><span>Maschinenbau</span><span>Anlagenbau</span><span>Industrie</span><span>Photovoltaik</span><span>Elektrohandwerk</span></div></div>
+    </div>
+  </section>
+
+  <section class="section process" id="ablauf">
+    <div class="container">
+      <p class="eyebrow"><span class="eyebrow-line"></span> SO FUNKTIONIERT DIE ZUSAMMENARBEIT</p><h2>In drei Schritten <em>zum Angebot.</em></h2>
+      <div class="process-grid">
+        <article><span>01 / ANFRAGE</span><h3>Projekt beschreiben</h3><p>Teilen Sie uns Stückzahl, technische Anforderungen und gewünschte Termine mit.</p></article>
+        <article><span>02 / UNTERLAGEN</span><h3>Details klären</h3><p>Senden Sie vorhandene Pläne und Stücklisten per E-Mail. Offene Punkte stimmen wir ab.</p></article>
+        <article><span>03 / ANGEBOT</span><h3>Angebot erhalten</h3><p>Wir prüfen die Anfrage und erstellen auf dieser Basis ein individuelles Angebot.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <div class="container faq-grid"><div><p class="eyebrow"><span class="eyebrow-line"></span> GUT ZU WISSEN</p><h2>Häufige <em>Fragen.</em></h2></div><div class="faq-list">
+      {faqs.map((faq) => <details><summary>{faq.q}</summary><p>{faq.a}</p></details>)}
+    </div></div>
+  </section>
+
+  <section class="contact-section" id="anfrage">
+    <div class="container contact-grid">
+      <div class="contact-intro">
+        <p class="eyebrow"><span class="eyebrow-line"></span> ANGEBOT ANFORDERN</p>
+        <h2>Ihr Projekt. <br/><em>Unser Angebot.</em></h2>
+        <p>Ob Einzelstück, wiederkehrende Serie oder neue Anlage: Beschreiben Sie Ihr Vorhaben. Wir melden uns per E-Mail zurück.</p>
+        <a class="email-link" href="mailto:vertrieb@mp-schaltanlagen.de">↗ vertrieb@mp-schaltanlagen.de</a>
+        <p class="contact-hint">Vorhandene technische Unterlagen können Sie Ihrer E-Mail beifügen.</p>
+      </div>
+      <form id="request-form" class="request-form">
+        <div class="form-heading"><h3>Projektanfrage</h3><p>Unverbindlich · Kontaktaufnahme per E-Mail</p></div>
+        <div class="form-grid">
+          <label>Unternehmen *<input name="company" type="text" autocomplete="organization" required placeholder="Ihr Unternehmen" /></label>
+          <label>Ansprechpartner *<input name="contact" type="text" autocomplete="name" required placeholder="Vor- und Nachname" /></label>
+          <label class="wide">Geschäftliche E-Mail *<input name="email" type="email" autocomplete="email" required placeholder="name@unternehmen.de" /></label>
+          <label class="wide">Gewünschte Leistung<select name="service"><option>Fertigung nach Schaltplan</option><option>Serienfertigung</option><option>Planung und Fertigung</option><option>Andere Anfrage</option></select></label>
+          <label>Stückzahl<select name="quantity"><option>Einzelstück</option><option>2–10 Stück</option><option>11–50 Stück</option><option>Über 50 Stück</option><option>Noch offen</option></select></label>
+          <label>Unterlagen vorhanden<select name="documents"><option>Ja</option><option>Nein</option><option>Teilweise</option></select></label>
+          <label class="wide">Projektbeschreibung *<textarea name="description" rows="5" required placeholder="Was wird benötigt? Gibt es Stromlaufpläne, Stücklisten oder besondere Anforderungen?"></textarea></label>
+        </div>
+        <p class="form-disclaimer">Diese erste Version öffnet Ihr E-Mail-Programm. Es werden keine Daten über einen Website-Server übertragen. Dateien können Sie dort anhängen. Bitte beachten Sie unsere <a href="/datenschutz/">Datenschutzhinweise</a>.</p>
+        <button class="button button-dark" type="submit">E-Mail-Anfrage vorbereiten <span aria-hidden="true">↗</span></button>
+      </form>
+    </div>
+  </section>
+  <script>
+    const form = document.querySelector<HTMLFormElement>("#request-form");
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      const field = (key: string) => String(data.get(key) ?? "").trim();
+      const message = [
+        "Guten Tag,",
+        "",
+        "ich möchte ein Angebot für folgendes Projekt anfordern:",
+        "",
+        "Unternehmen: " + field("company"),
+        "Ansprechpartner: " + field("contact"),
+        "E-Mail: " + field("email"),
+        "Leistung: " + field("service"),
+        "Stückzahl: " + field("quantity"),
+        "Unterlagen vorhanden: " + field("documents"),
+        "",
+        "Projektbeschreibung:",
+        field("description"),
+        "",
+        "Mit freundlichen Grüßen",
+        field("contact"),
+      ].join("\n");
+      window.location.href = "mailto:vertrieb@mp-schaltanlagen.de?subject=" +
+        encodeURIComponent("Projektanfrage – " + field("company")) +
+        "&body=" + encodeURIComponent(message);
+    });
+  </script>
+</BaseLayout>
